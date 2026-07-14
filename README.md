@@ -16,14 +16,16 @@ This project demonstrates the security differences between unencrypted (HTTP) an
 * **Filter Used:** `http.request.method == "POST"`
 * **Finding:** The credentials were fully exposed in plain text.
 
-![HTTP Clear Text Screenshot](screenshots/http_cleartext.png)
+<img width="1360" height="724" alt="http_cleartxt png" src="https://github.com/user-attachments/assets/ef3d4a66-ecf1-4e56-812b-51bf6ffe727c" />
+
 
 ### Part 2: Encrypted Traffic Analysis (HTTPS/TLS)
 * **Goal:** Capture a login attempt on a secure website using HTTPS.
 * **Filter Used:** `tls`
 * **Finding:** The handshake (`Client Hello` / `Server Hello`) was visible, but the login payload was completely encrypted as scrambled `Application Data`.
 
-![HTTPS Encrypted Screenshot](screenshots/https_encrypted.png)
+<img width="1359" height="719" alt="https_encrypted png" src="https://github.com/user-attachments/assets/f4134246-2ab0-42aa-8faf-94ee40fe987f" />
+
 
 ## Key Takeaways
 1. **Clear Text Vulnerability:** Unencrypted HTTP protocols leave user credentials exposed to local packet sniffing attacks.
